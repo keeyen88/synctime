@@ -27,7 +27,9 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
 
 echo on
+net start w32time
+timeout 2
 w32tm /resync
 timeout 2
 w32tm /resync /force
-timeout 3
+timeout 2
